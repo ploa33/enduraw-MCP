@@ -1,0 +1,52 @@
+{
+  "name": "enduraw-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Enduraw. Access your physiological Runner Matrix, critical speed, cardio efficiency, biomechanics, and race pacing data from Claude, Cursor, Antigravity, or any MCP client.",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "enduraw-mcp": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "mcp",
+    "enduraw",
+    "model-context-protocol",
+    "running",
+    "trail-running",
+    "ultratrail",
+    "runner-matrix",
+    "strava",
+    "critical-speed",
+    "cardio",
+    "claude",
+    "cursor",
+    "antigravity",
+    "ai"
+  ],
+  "author": "ploa33",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ploa33/enduraw-MCP.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ploa33/enduraw-MCP/issues"
+  },
+  "homepage": "https://github.com/ploa33/enduraw-MCP#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "zod": "^3.23.8"
+  }
+}
