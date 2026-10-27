@@ -1,14 +1,14 @@
 # enduraw-MCP
 
-MCP server for [Enduraw](https://app.enduraw.co). Access your physiological Runner Matrix, Critical Speed, cardio efficiency, climbing/downhill biomechanics, race pacing simulations, and training load (CTL/ATL/TSB) from Claude Code, Claude Desktop, Cursor, Windsurf, Antigravity, or any MCP client.
+MCP server for [Enduraw](https://app.enduraw.co). Connects directly to Enduraw's official APIs to access your physiological Runner Matrix, Critical Speed, cardio efficiency, climbing/downhill biomechanics, official race database (329+ races), 3D course elevation profiles, aid station checkpoints, and training history from Claude Code, Claude Desktop, Cursor, Windsurf, Antigravity, or any MCP client.
 
-25 tools across 7 categories:
+24 tools across 7 categories:
 - Profile and Runner Matrix (5 tools)
 - Athlete Lab and Modeling (3 tools)
 - Physiological Tests and Evaluations (5 tools)
 - Activities and Deep In-Session Analysis (5 tools)
-- Pacing Plans, Race Database and Custom Simulations (5 tools)
-- Fitness and Fatigue / Coggan Modeling (1 tool)
+- Race Database, Elevation Profiles and Pacing Plans (4 tools)
+- Form and Fatigue (1 tool)
 - Notifications and Daily Alerts (1 tool)
 
 ---
@@ -125,7 +125,7 @@ To connect to Enduraw, you need your `ENDURAW_ACCESS_TOKEN` (JWT session token):
 
 ---
 
-## Available Tools (25 Tools)
+## Available Tools (24 Tools)
 
 ### 1. Profile and Runner Matrix (5 tools)
 
@@ -165,7 +165,7 @@ To connect to Enduraw, you need your `ENDURAW_ACCESS_TOKEN` (JWT session token):
 | `get_enduraw_activities_map` | None | Complete GPS coordinates array of all activities for personal Heatmap mapping |
 | `get_enduraw_analysis_quota` | None | Consult current monthly/annual deep-analysis quota and subscription level |
 
-### 5. Pacing Plans, Race Database and Custom Simulations (5 tools)
+### 5. Race Database, Elevation Profiles and Pacing Plans (4 tools)
 
 | Tool | Parameters | Description |
 |---|---|---|
@@ -173,13 +173,12 @@ To connect to Enduraw, you need your `ENDURAW_ACCESS_TOKEN` (JWT session token):
 | `get_enduraw_races` | `query` (optional string) | Official race course database (329+ races: UTMB, CCC, Saintelyon, Diagonale des Fous, etc.) |
 | `get_enduraw_race_course_profile` | `race_name` (string, required) | Full 3D elevation profile of an official race with D+, D-, min/max altitude, and aid stations count |
 | `get_enduraw_race_gpx` | `race_name` (string, required) | Full GPX GeoJSON track and official checkpoints/aid stations with exact distances and cumulative elevation |
-| `simulate_enduraw_pacing_plan` | `race_name` (required), `target_time_hours` (optional), `pacing_strategy` (conservative, balanced, aggressive) | Scientific personalized pacing plan simulation segment-by-segment with gradient-adjusted paces (VAM uphill, descent speed, flat pace) and targeted carb/hydration intake |
 
-### 6. Fitness and Fatigue Modeling (1 tool)
+### 6. Form and Fatigue (1 tool)
 
 | Tool | Parameters | Description |
 |---|---|---|
-| `get_enduraw_form_fatigue` | `days` (default: 180) | Banister/Coggan impulse-response model: CTL (Fitness 42d), ATL (Fatigue 7d), TSB (Form), ACWR injury risk ratio, and pre-race tapering status |
+| `get_enduraw_form_fatigue` | `days` (default: 180), `sport` (default: 'all') | Official Enduraw Form and Fatigue modeling (CTL, ATL, TSB curves) directly from `/auth/api/activities/form-fatigue/`. Returns official metrics or subscription requirement status (Starter tier) |
 
 ### 7. Notifications (1 tool)
 
@@ -195,10 +194,11 @@ Here are examples of prompts you can use once connected:
 
 - "What is my Critical Speed (Vc) and D' according to Enduraw, and what are my theoretical times on 5k and 10k?"
 - "Analyze my cardiac cost between 10 km/h and 13.5 km/h. How many beats does each km/h cost me?"
-- "What is my current CTL (fitness), ATL (fatigue), and TSB (freshness)? Am I in a good tapering window for this weekend?"
-- "Simulate an optimal pacing plan for the CCC with an aggressive target, and show me the carb/hydration needs per hour."
+- "Extract the full 3D course elevation profile and official checkpoints for the CCC."
+- "Show me all 20 aid stations on the UTMB with their exact kilometer markers and cumulative elevation gain."
 - "What is my climbing VAM profile on 10% vs 20% slopes, and at what gradient does my cadence drop?"
 - "Show me my progression curve on the Half-Marathon and Marathon benchmark distances."
+- "What is the breakdown of continuous climbs in my Athlete Lab (<5 min to 20+ min) and my downhill descent speed (VDM)?"
 
 ---
 
