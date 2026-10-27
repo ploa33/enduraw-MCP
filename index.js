@@ -1127,7 +1127,7 @@ server.tool(
         const waterMl = Math.round((segDurationSec / 3600) * 500);
 
         segments.push({
-          segment: `${cpStart.name} ➔ ${cpEnd.name}`,
+          segment: `${cpStart.name} -> ${cpEnd.name}`,
           distance_km: Math.round(distKm * 10) / 10,
           d_plus_m: Math.round(dPlusM),
           d_minus_m: Math.round(dMinusM),
