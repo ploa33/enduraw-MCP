@@ -227,6 +227,12 @@ npm start
 
 ---
 
+## Disclaimer
+
+This project is an independent, community-developed open-source tool built for personal interoperability purposes using the Model Context Protocol. It is not affiliated with, maintained by, authorized by, endorsed by, or sponsored by Enduraw or any of its subsidiaries. All product names, trademarks, and registered trademarks belong to their respective owners.
+
+---
+
 ## License
 
-[MIT](LICENSE) (c) [ploa33](https://github.com/ploa33)
+MIT
