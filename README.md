@@ -1,6 +1,6 @@
 # enduraw-MCP
 
-MCP server for [Enduraw](https://app.enduraw.co). Connects directly to Enduraw's official APIs to access your physiological Runner Matrix, Critical Speed, cardio efficiency, climbing/downhill biomechanics, official race database (329+ races), 3D course elevation profiles, aid station checkpoints, and training history from Claude Code, Claude Desktop, Cursor, Windsurf, Antigravity, or any MCP client.
+MCP server for [Enduraw](https://app.enduraw.co). Unofficial community MCP wrapper to access your physiological Runner Matrix, Critical Speed, cardio efficiency, climbing/downhill biomechanics, 3D course elevation profiles, aid station checkpoints, and training history from Claude Code, Claude Desktop, Cursor, Windsurf, Antigravity, or any MCP client.
 
 24 tools across 7 categories:
 - Profile and Runner Matrix (5 tools)
